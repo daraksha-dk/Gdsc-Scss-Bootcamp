@@ -5,6 +5,8 @@
 // -mixin
 // -parameters
 // -partials
+@import "mixin";
+@import "var";
 
 * {
   margin: 0;
@@ -13,19 +15,7 @@
   text-align: center;
   font-weight: 400;
 }
-// variables
-$bg-color: aqua;
-// mixin
-@mixin theme($theme: DarkGray, $color: pink) {
-  width: 200px;
-  height: 70px;
-  text-align: center;
-  background-color: $theme;
-  border: 1px solid black;
-  text-transform: lowercase;
-  color: $color;
-}
-
+// nesting
 .main-header {
   width: 100vw;
   height: 100vh;
@@ -56,32 +46,16 @@ $bg-color: aqua;
       gap: 20px;
 
       &_first {
-        width: 200px;
-        height: 70px;
-        text-align: center;
-        background-color: aqua;
-        border: 1px solid black;
+        @include theme(lightgray, green);
       }
       &_second {
-        width: 200px;
-        height: 70px;
-        text-align: center;
-        background-color: aqua;
-        border: 1px solid black;
+        @include theme(blue, pink);
       }
       &_third {
-        width: 200px;
-        height: 70px;
-        text-align: center;
-        background-color: aqua;
-        border: 1px solid black;
+        @include theme(red, gray);
       }
       &_fourth {
-        width: 200px;
-        height: 70px;
-        text-align: center;
-        background-color: aqua;
-        border: 1px solid black;
+        @include theme(orange, green);
       }
     }
   }

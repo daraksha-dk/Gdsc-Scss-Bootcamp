@@ -1,0 +1,9 @@
+@mixin theme($theme: DarkGray, $color: pink) {
+  width: 200px;
+  height: 70px;
+  text-align: center;
+  background-color: $theme;
+  border: 1px solid black;
+  text-transform: lowercase;
+  color: $color;
+}
